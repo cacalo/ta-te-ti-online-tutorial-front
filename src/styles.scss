@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@use "../public/colors.scss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+* {
+  font-family: "JetBrains Mono", monospace;
+  color: colors.$primary;
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.flex-apart{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.italic{
+  font-style: italic;
+}

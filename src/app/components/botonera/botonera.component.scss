@@ -1,0 +1,93 @@
+@use "./../../../../public/colors.scss";
+#container{
+  pointer-events: none;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+#d-pad-container{
+  $tamaño-d-pad: 100px;
+  $padding: 4px;
+  position: relative;
+  border: 1.5px solid colors.$accent-1-contrast;
+  width: $tamaño-d-pad;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: $padding;
+  >div{
+    $ancho-cruz: 20px;
+    position: absolute;
+    width: $ancho-cruz;
+    background-color: colors.$primary;
+    height: $tamaño-d-pad;
+    left: calc($tamaño-d-pad / 2) - ($ancho-cruz / 2) + $padding;
+    &:last-child{
+      rotate: 90deg;
+    }
+  }
+}
+
+
+#x-o-container{
+  translate: 0 40px;
+}
+
+#x-o-borde-container{
+  border: 1.5px solid colors.$accent-1-contrast;
+  border-radius: 2rem;
+  padding: 5px;
+  rotate: -45deg;
+  width: 110px;
+}
+
+.boton-redondo{
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: colors.$accent-2;
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  span{
+    translate: 0 40px;
+  }
+}
+
+#botones-start-container{
+  margin: auto;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  div{
+    translate: 0 40px;
+    margin: 0;
+  }
+}
+
+.boton-alargado{
+  width: 80px;
+  height: 10px;
+  margin: 10px;
+  rotate: -35deg;
+  border-radius: 2rem;
+  border: 1.5px solid colors.$primary;
+  display: flex;
+  justify-content: center;
+  span{
+    translate: 0 14px;
+    font-size: smaller;
+    font-weight: bold;
+  }
+}
+
+#parlante-container{
+  width: 80px;
+  rotate: 45deg;
+  margin-left: auto;
+  margin-top: auto;
+  div{
+    aspect-ratio: 9;
+    margin: 8px;
+    border-radius: 2rem;
+    border: 1.5px solid colors.$primary;
+  }
+}
