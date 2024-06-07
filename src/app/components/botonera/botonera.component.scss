@@ -20,7 +20,7 @@
     width: $ancho-cruz;
     background-color: colors.$primary;
     height: $tamaño-d-pad;
-    left: calc($tamaño-d-pad / 2) - ($ancho-cruz / 2) + $padding;
+    left: calc($tamaño-d-pad / 2 - $ancho-cruz / 2 + $padding);
     &:last-child{
       rotate: 90deg;
     }
