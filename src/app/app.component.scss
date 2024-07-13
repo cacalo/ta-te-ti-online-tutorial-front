@@ -15,6 +15,7 @@ $padding-consola: 20px;
   background-color: colors.$background;
   border-radius: $border-radius-base;
   outline: 20px solid colors.$primary;
+  position: relative;
 }
 
 p{
