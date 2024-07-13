@@ -1,2 +1,10 @@
 <app-detalle-partida/>
 <app-tablero/>
+
+@if(salaService.estado() === "VICTORIA_P1" ||
+  salaService.estado() === "VICTORIA_P2" ||
+  salaService.estado() === "EMPATE" ||
+  salaService.estado() === "VICTORIA_FINAL_P1" ||
+  salaService.estado() === "VICTORIA_FINAL_P2"){
+  <button (click)="nuevaRonda()">Próxima ronda</button>
+}

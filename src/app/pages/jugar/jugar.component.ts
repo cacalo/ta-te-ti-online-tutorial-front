@@ -1,7 +1,6 @@
 import { Component, inject, input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ServerService } from '../../services/server.service';
-import { CrearSalaArgs } from '../../interfaces/crearSala';
 import { UsuarioService } from '../../services/usuario.service';
 import { TableroComponent } from '../../components/tablero/tablero.component';
 import { DetallePartidaComponent } from '../../components/detalle-partida/detalle-partida.component';
@@ -31,6 +30,10 @@ export class JugarComponent implements OnInit {
     } else {
       this.salaService.crearSala(true);
     }
+  }
+
+  nuevaRonda(){
+    this.salaService.nuevaRonda();
   }
 
 }

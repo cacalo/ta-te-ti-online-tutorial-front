@@ -76,4 +76,9 @@ export class SalaService {
       posicion
     })
    }
+
+   /** Envía el server la petición de un jugador de seguir con la siguiente ronda */
+   nuevaRonda(){
+    this.serverService.server.emit("nuevaRonda",{salaId:this.id()});
+   }
 }
