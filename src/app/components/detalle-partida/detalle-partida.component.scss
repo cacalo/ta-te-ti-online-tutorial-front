@@ -1,0 +1,43 @@
+@use "./../../../../public/colors.scss";
+
+section{
+  width: 100%;
+  margin: auto;
+}
+
+.jugador-container{
+  &:nth-child(1){
+    text-align: start;
+  }
+  &:nth-child(2){
+    text-align: end;
+  }
+}
+
+.corazon-container{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: colors.$accent-2;
+  border-bottom: 1px solid colors.$accent-2;
+  font-size: 1.5rem;
+}
+
+.marca-jugador{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin: 0 5px;
+  &.activo{
+    background-color: colors.$accent-1;
+    border-radius: 50%;
+  }
+}
+
+p{
+  margin: 0;
+}
+
+.turno{
+  font-size: larger;
+  text-align: center;
+}

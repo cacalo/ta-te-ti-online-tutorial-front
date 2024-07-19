@@ -1,5 +1,5 @@
 import { effect, inject, Injectable, signal } from '@angular/core';
-import { EstadoJuego, POSICION_TABLERO, SalaBackend, Tablero } from '../interfaces/sala';
+import { EstadoJuego, POSICION_TABLERO, PosicionGanadora, SalaBackend, Tablero } from '../interfaces/sala';
 import { Jugador } from '../interfaces/jugador';
 import { ServerService } from './server.service';
 import { CrearSalaArgs } from '../interfaces/crearSala';
@@ -34,6 +34,7 @@ export class SalaService {
    id = signal<number|undefined>(undefined);
    tablero = signal<Tablero>(["","","","","","","","","",]);
    publica = signal<boolean|undefined>(undefined);
+   posicionGanadora = signal<PosicionGanadora | undefined>(undefined);
 
    desestructurarSala(salaBack:SalaBackend){
     console.log("Desestructurando",salaBack)
@@ -44,6 +45,7 @@ export class SalaService {
     this.jugador2.set(salaBack.jugadores[1]);
     this.tablero.set(salaBack.tablero);
     this.publica.set(salaBack.publica);
+    this.posicionGanadora.set(salaBack.posicionGanadora);
    }
 
    /** Crea una sala de juegos, pública o privada */

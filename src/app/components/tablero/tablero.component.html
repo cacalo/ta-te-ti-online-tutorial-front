@@ -1,15 +1,11 @@
-<div>
-  <button (click)="jugar(0)" [disabled]="!esMiTurno()">{{salaService.tablero()[0]}}</button>
-  <button (click)="jugar(1)" [disabled]="!esMiTurno()">{{salaService.tablero()[1]}}</button>
-  <button (click)="jugar(2)" [disabled]="!esMiTurno()">{{salaService.tablero()[2]}}</button>
-</div>
-<div>
-  <button (click)="jugar(3)" [disabled]="!esMiTurno()">{{salaService.tablero()[3]}}</button>
-  <button (click)="jugar(4)" [disabled]="!esMiTurno()">{{salaService.tablero()[4]}}</button>
-  <button (click)="jugar(5)" [disabled]="!esMiTurno()">{{salaService.tablero()[5]}}</button>
-</div>
-<div>
-  <button (click)="jugar(6)" [disabled]="!esMiTurno()">{{salaService.tablero()[6]}}</button>
-  <button (click)="jugar(7)" [disabled]="!esMiTurno()">{{salaService.tablero()[7]}}</button>
-  <button (click)="jugar(8)" [disabled]="!esMiTurno()">{{salaService.tablero()[8]}}</button>
-</div>
+<section>
+    <button (click)="jugar(0)" [disabled]="!esMiTurno() || salaService.tablero()[0]!== ''"><span [ngClass]="{local: salaService.tablero()[0] === salaService.numeroDeJugador(), ganador: salaService.posicionGanadora()?.includes(0)}">{{getMarca(salaService.tablero()[0])}}</span></button>
+    <button (click)="jugar(1)" [disabled]="!esMiTurno() || salaService.tablero()[1]!== ''"><span [ngClass]="{local: salaService.tablero()[1] === salaService.numeroDeJugador(), ganador: salaService.posicionGanadora()?.includes(1)}">{{getMarca(salaService.tablero()[1])}}</span></button>
+    <button (click)="jugar(2)" [disabled]="!esMiTurno() || salaService.tablero()[2]!== ''"><span [ngClass]="{local: salaService.tablero()[2] === salaService.numeroDeJugador(), ganador: salaService.posicionGanadora()?.includes(2)}">{{getMarca(salaService.tablero()[2])}}</span></button>
+    <button (click)="jugar(3)" [disabled]="!esMiTurno() || salaService.tablero()[3]!== ''"><span [ngClass]="{local: salaService.tablero()[3] === salaService.numeroDeJugador(), ganador: salaService.posicionGanadora()?.includes(3)}">{{getMarca(salaService.tablero()[3])}}</span></button>
+    <button (click)="jugar(4)" [disabled]="!esMiTurno() || salaService.tablero()[4]!== ''"><span [ngClass]="{local: salaService.tablero()[4] === salaService.numeroDeJugador(), ganador: salaService.posicionGanadora()?.includes(4)}">{{getMarca(salaService.tablero()[4])}}</span></button>
+    <button (click)="jugar(5)" [disabled]="!esMiTurno() || salaService.tablero()[5]!== ''"><span [ngClass]="{local: salaService.tablero()[5] === salaService.numeroDeJugador(), ganador: salaService.posicionGanadora()?.includes(5)}">{{getMarca(salaService.tablero()[5])}}</span></button>
+    <button (click)="jugar(6)" [disabled]="!esMiTurno() || salaService.tablero()[6]!== ''"><span [ngClass]="{local: salaService.tablero()[6] === salaService.numeroDeJugador(), ganador: salaService.posicionGanadora()?.includes(6)}">{{getMarca(salaService.tablero()[6])}}</span></button>
+    <button (click)="jugar(7)" [disabled]="!esMiTurno() || salaService.tablero()[7]!== ''"><span [ngClass]="{local: salaService.tablero()[7] === salaService.numeroDeJugador(), ganador: salaService.posicionGanadora()?.includes(7)}">{{getMarca(salaService.tablero()[7])}}</span></button>
+    <button (click)="jugar(8)" [disabled]="!esMiTurno() || salaService.tablero()[8]!== ''"><span [ngClass]="{local: salaService.tablero()[8] === salaService.numeroDeJugador(), ganador: salaService.posicionGanadora()?.includes(8)}">{{getMarca(salaService.tablero()[8])}}</span></button>
+</section>

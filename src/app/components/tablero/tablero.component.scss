@@ -1,4 +1,59 @@
+@use "./../../../../public/colors.scss";
+
+$borde: 1px solid colors.$primary;
+
+section{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 1rem;
+}
+
 button{
   aspect-ratio: 1;
-  width: 50px;
+  width: 100%;
+  border: unset;
+  background-color: unset;
+  font-size: 300%;
+  &:not(:disabled){
+    cursor: pointer;
+  }
+  &:nth-of-type(2), &:nth-of-type(8){
+    border-left: $borde;
+    border-right: $borde;
+  }
+  &:nth-of-type(4), &:nth-of-type(6){
+    border-top: $borde;
+    border-bottom: $borde;
+  }
+  &:nth-of-type(5){
+    border: $borde;
+  }
+
+}
+
+.local{
+  color: colors.$accent-2;
+}
+
+.ganador{
+  display: inline-block;
+  animation: ganador 2s infinite;
+}
+
+@keyframes ganador {
+  0%{
+    scale: 1;
+  }
+  25%{
+    scale: 1.25;
+    rotate: 25deg;
+  }
+  50%{
+    scale: 1;
+  }
+  75%{
+    scale: 1.25;
+    rotate: -25deg;
+  }
 }

@@ -1,3 +1,58 @@
+@use "./../../../../public/colors.scss";
+
 a{
   display: block;
+}
+
+section{
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  span{
+    font-weight: bold;
+    font-size: x-large;
+  }
+}
+
+h1{
+  position: relative;
+  font-size: 3rem;
+  text-align: center;
+  span{
+    font-size: small;
+    position: absolute;
+    bottom: -16px;
+    right: 46px;
+  }
+}
+
+div{
+  gap: 5px;
+}
+
+$ancho-borde-animado: 300px;
+$alto-borde-animado: 80px;
+.borde-animado{
+  height:$alto-borde-animado;
+  width: $ancho-borde-animado;
+  line-height: $alto-borde-animado;
+  background: 
+    linear-gradient(90deg, colors.$primary 50%, transparent 50%),
+    linear-gradient(90deg, colors.$primary 50%, transparent 50%),
+    linear-gradient(0deg, colors.$primary 50%, transparent 50%),
+    linear-gradient(0deg, colors.$primary 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 15px 4px, 15px 4px, 4px 15px, 4px 15px;
+  background-position: 0px 0px, $ancho-borde-animado $alto-borde-animado, 0px $alto-borde-animado, $ancho-borde-animado 0px;
+  padding: 10px;
+  animation: borde-animado 1s infinite steps(2,jump-both);
+}
+
+@keyframes borde-animado {
+  0% {
+    background-position: 0px 0px, 300px calc($alto-borde-animado + 16px), 0px 150px, calc($ancho-borde-animado + 16px) 0px;
+  }
+  100% {
+    background-position: 300px 0px, 0px calc($alto-borde-animado + 16px), 0px 0px, calc($ancho-borde-animado + 16px) 150px;
+  }
 }

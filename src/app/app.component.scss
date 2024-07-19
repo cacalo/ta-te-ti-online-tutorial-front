@@ -16,9 +16,41 @@ $padding-consola: 20px;
   border-radius: $border-radius-base;
   outline: 20px solid colors.$primary;
   position: relative;
+  padding: 1rem 2rem;
+  overflow: hidden;
 }
 
 p{
   margin-top: 26px;
   font-weight: bold;
+}
+
+@media(width <= 600px){
+  body{
+    margin: 0;
+  }
+
+  #container{
+    max-width: 100%;
+  }
+}
+
+@media(height <= 900px){
+  body{
+    margin: 0;
+  }
+
+  app-botonera{
+    display: none;
+  }
+
+  #container{
+    height: 100svh;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  #pantalla{
+    height: 87svh;
+  }
 }

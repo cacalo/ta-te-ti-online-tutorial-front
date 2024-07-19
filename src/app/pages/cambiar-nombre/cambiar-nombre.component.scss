@@ -1,0 +1,24 @@
+@use "./../../../../public/colors.scss";
+
+section{
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  gap: 10px;
+  text-align: center;
+  label{
+    font-size: large;
+  }
+  input{
+    background-color: transparent;
+    border: unset;
+    border-bottom: 2px dashed colors.$primary;
+    text-align: center;
+    &:focus{
+      outline: unset;
+    }
+  }
+}

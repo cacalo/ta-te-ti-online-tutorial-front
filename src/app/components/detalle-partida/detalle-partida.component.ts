@@ -1,10 +1,11 @@
 import { Component, computed, inject } from '@angular/core';
 import { SalaService } from '../../services/sala.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detalle-partida',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './detalle-partida.component.html',
   styleUrl: './detalle-partida.component.scss'
 })

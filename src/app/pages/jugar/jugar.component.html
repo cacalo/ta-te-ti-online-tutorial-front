@@ -1,5 +1,8 @@
-<app-detalle-partida/>
-<app-tablero/>
+<div id="container">
+  <app-detalle-partida/>
+  <app-tablero/>
+</div>
+
 <app-modal-fullscreen [mostrar]="this.mostrarModal()">
   @switch (estadoAnterior()) {
     @case ("ESPERANDO_COMPAÑERO") {
@@ -23,39 +26,31 @@
       <img secundario src="img/3-dots-scale-middle.svg">
     }
     @case ("VICTORIA_P1") {
-      <button secundario (click)="nuevaRonda()">Próxima ronda</button>
+      <button secundario (click)="nuevaRonda()" class="boton">Próxima ronda</button>
     }
     @case ("VICTORIA_P2") {
-      <button secundario (click)="nuevaRonda()">Próxima ronda</button>
+      <button secundario (click)="nuevaRonda()" class="boton">Próxima ronda</button>
     }
     @case ("VICTORIA_FINAL_P1") {
-      <button secundario (click)="nuevaRonda()">Nueva partida</button>
+      <button secundario (click)="nuevaRonda()" class="boton">Nueva partida</button>
     }
     @case ("VICTORIA_FINAL_P2") {
-      <button secundario (click)="nuevaRonda()">Nueva partida</button>
+      <button secundario (click)="nuevaRonda()" class="boton">Nueva partida</button>
     }
   }
 
   @if(!salaService.publica() && this.estadoAnterior() === "ESPERANDO_COMPAÑERO"){
-    <div pie>
-      <p>Copiá el link para invitar a un amigo</p>
+    <div pie id="pie">
+      <p>Copiá el link para invitar a un amigo
       <button id="boton-copiar">
         <img (click)="copiarLink()" src="img/copy.svg" alt="Copiar link">
       </button>
       @if(linkCopiado()){
         <span>✓</span>
       }
+    </p>
     </div>
   }
 
   
 </app-modal-fullscreen>
-
-
-@if(salaService.estado() === "VICTORIA_P1" ||
-  salaService.estado() === "VICTORIA_P2" ||
-  salaService.estado() === "EMPATE" ||
-  salaService.estado() === "VICTORIA_FINAL_P1" ||
-  salaService.estado() === "VICTORIA_FINAL_P2"){
-  <button (click)="nuevaRonda()">Próxima ronda</button>
-}
