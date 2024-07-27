@@ -8,10 +8,12 @@ import { SalaService } from '../../services/sala.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { ModalFullscreenComponent } from "../../components/modal-fullscreen/modal-fullscreen.component";
 import { EstadoJuego } from '../../interfaces/sala';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-jugar',
   standalone: true,
+  providers: [Location],
   imports: [RouterModule, TableroComponent, DetallePartidaComponent, ModalFullscreenComponent],
   templateUrl: './jugar.component.html',
   styleUrl: './jugar.component.scss',
@@ -21,6 +23,7 @@ export class JugarComponent implements OnInit {
   serverService = inject(ServerService);
   usuarioService = inject(UsuarioService);
   salaService = inject(SalaService)
+  location = inject(Location);
   esPrivada = input();
   id = input<string>();
   estadosConModal:EstadoJuego[] = ["ABANDONADO","EMPATE","ESPERANDO_COMPAÑERO","VICTORIA_FINAL_P1","VICTORIA_FINAL_P2","VICTORIA_P1","VICTORIA_P2"];
@@ -28,14 +31,17 @@ export class JugarComponent implements OnInit {
   estadoAnterior = signal<EstadoJuego>("ESPERANDO_COMPAÑERO");
   cambiarEstadoAnterior = effect(()=> {
     if(this.salaService.estado()){
-      setTimeout(()=>this.estadoAnterior.set(this.salaService.estado()),1000),
-      {allowSignalWrites:true}
-    }
-  });
+      this.estadoCambioHaceMucho = false;
+      setTimeout(()=>{
+        this.estadoAnterior.set(this.salaService.estado());
+        this.estadoCambioHaceMucho = true;
+      },1000)}
+  },{allowSignalWrites:true});
   linkCopiado = signal<boolean>(false);
-
+  estadoCambioHaceMucho = true;
 
   ngOnInit(): void {
+    this.location.replaceState("jugar")
     if(!this.esPrivada() && !this.id()){
       this.salaService.crearSala();
     } else if(this.id()) {

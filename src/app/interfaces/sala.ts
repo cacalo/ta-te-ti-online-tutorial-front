@@ -19,7 +19,7 @@ export interface SalaBackend {
   posicionGanadora: PosicionGanadora | undefined
 }
 
-export type POSICION_TABLERO = 0|1|2|3|4|5|6|7|8;
+export type PosicionTablero = 0|1|2|3|4|5|6|7|8;
 export type Tablero = [NumeroJugador|"",NumeroJugador|"",NumeroJugador|"",NumeroJugador|"",NumeroJugador|"",NumeroJugador|"",NumeroJugador|"",NumeroJugador|"",NumeroJugador|""];
 export type NumeroJugador = 1|2;
-export type PosicionGanadora = [POSICION_TABLERO,POSICION_TABLERO,POSICION_TABLERO];
+export type PosicionGanadora = [PosicionTablero,PosicionTablero,PosicionTablero];

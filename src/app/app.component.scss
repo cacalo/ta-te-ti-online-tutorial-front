@@ -51,6 +51,6 @@ p{
   }
 
   #pantalla{
-    height: 87svh;
+    height: calc( 100svh - ($padding-consola * 2) - ($border-radius-base + $padding-consola) *2) ;
   }
 }

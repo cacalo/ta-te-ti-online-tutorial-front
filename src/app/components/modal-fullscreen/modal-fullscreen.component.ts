@@ -44,6 +44,16 @@ import { Component, input } from '@angular/core';
         animate("0.5s 0.1s ease-out",style({translate:"-400px"}))
       ])
     ]),
+    trigger("inOutAnimation3",[
+      transition(":enter", [
+        style({translate:"400px"}),
+        animate("0.5s 0.2s ease-in-out",style({translate:0}))
+      ]),
+      transition(":leave", [
+        style({translate:0}),
+        animate("0.5s 0.2s ease-out",style({translate:"-400px"}))
+      ])
+    ]),
   ]
 })
 export class ModalFullscreenComponent {

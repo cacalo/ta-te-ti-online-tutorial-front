@@ -1,6 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { SalaService } from '../../services/sala.service';
-import { NumeroJugador, POSICION_TABLERO } from '../../interfaces/sala';
+import { NumeroJugador, PosicionTablero } from '../../interfaces/sala';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -17,7 +17,7 @@ export class TableroComponent {
     (this.salaService.estado() === "TURNO_P1" && this.salaService.numeroDeJugador() === 1) || 
     (this.salaService.estado() === "TURNO_P2" && this.salaService.numeroDeJugador() === 2));
 
-    jugar(posicion:POSICION_TABLERO){
+    jugar(posicion:PosicionTablero){
       this.salaService.jugar(posicion);
     }
 

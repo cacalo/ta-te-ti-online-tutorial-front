@@ -4,7 +4,7 @@
 </div>
 
 <app-modal-fullscreen [mostrar]="this.mostrarModal()">
-  @switch (estadoAnterior()) {
+  @switch (this.salaService.estado()) {
     @case ("ESPERANDO_COMPAÑERO") {
       <h2 primario>Esperando compañero</h2>
     }
@@ -19,6 +19,9 @@
     }
     @case ("VICTORIA_FINAL_P2") {
       <h2 primario>Ganó {{salaService.jugador2().nombre}} todas las rondas</h2>
+    }
+    @case ("ABANDONADO") {
+      <h2 primario>El otro jugador ha abandonado la partida</h2>
     }
   }
   @switch (estadoAnterior()) {
@@ -36,6 +39,9 @@
     }
     @case ("VICTORIA_FINAL_P2") {
       <button secundario (click)="nuevaRonda()" class="boton">Nueva partida</button>
+    }
+    @case ("ABANDONADO") {
+      <a [routerLink]="['/']" secundario class="boton">Volver al inicio</a>
     }
   }
 

@@ -8,6 +8,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideExperimentalZonelessChangeDetection(),
     provideRouter(routes,withComponentInputBinding()),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
   ]
 };

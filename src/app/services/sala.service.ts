@@ -1,5 +1,5 @@
-import { effect, inject, Injectable, signal } from '@angular/core';
-import { EstadoJuego, POSICION_TABLERO, PosicionGanadora, SalaBackend, Tablero } from '../interfaces/sala';
+import { inject, Injectable, signal } from '@angular/core';
+import { EstadoJuego, PosicionTablero, PosicionGanadora, SalaBackend, Tablero } from '../interfaces/sala';
 import { Jugador } from '../interfaces/jugador';
 import { ServerService } from './server.service';
 import { CrearSalaArgs } from '../interfaces/crearSala';
@@ -75,7 +75,7 @@ export class SalaService {
    }
 
    /** Envia al server la petición de un jugador de hacer una jugada */
-   jugar(posicion:POSICION_TABLERO){
+   jugar(posicion:PosicionTablero){
     console.log("Emitiendo jugada")
     this.serverService.server.emit("jugar",{
       salaId: this.id(),

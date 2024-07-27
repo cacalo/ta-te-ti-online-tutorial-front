@@ -24,7 +24,7 @@ export const routes: Routes = [
     path: "jugar-privada",
     component: JugarComponent,
     canActivate: [necesitaNombreGuard],
-    data: {esPrivada:true}
+    data: {esPrivada:true},
   },
   {
     path: "cambiar-nombre",
