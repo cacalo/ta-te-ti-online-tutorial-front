@@ -37,7 +37,7 @@ export class SalaService {
    posicionGanadora = signal<PosicionGanadora | undefined>(undefined);
 
    desestructurarSala(salaBack:SalaBackend){
-    console.log("Desestructurando",salaBack)
+    //console.log("Desestructurando",salaBack)
     if(!salaBack) this.router.navigate(["/"]) ;
     this.id.set(salaBack.id);
     this.estado.set(salaBack.estado);
@@ -55,7 +55,7 @@ export class SalaService {
       nombreJugador: this.usuarioService.nombre()
     }
     this.serverService.server.emitWithAck("crearSala",args).then(res => {
-      console.log("Crear sala", res)
+      //console.log("Crear sala", res)
       this.desestructurarSala(res.sala);
       this.numeroDeJugador.set(1)
     })
@@ -68,7 +68,7 @@ export class SalaService {
       nombreJugador: this.usuarioService.nombre()
     }
       this.serverService.server.emitWithAck("unirseASala",args).then(res => {
-        console.log("Resultado de unión a sala", res)
+        //console.log("Resultado de unión a sala", res)
         this.desestructurarSala(res.sala);
         this.numeroDeJugador.set(2)
       })
@@ -76,7 +76,7 @@ export class SalaService {
 
    /** Envia al server la petición de un jugador de hacer una jugada */
    jugar(posicion:PosicionTablero){
-    console.log("Emitiendo jugada")
+    //console.log("Emitiendo jugada")
     this.serverService.server.emit("jugar",{
       salaId: this.id(),
       jugador: this.numeroDeJugador(),

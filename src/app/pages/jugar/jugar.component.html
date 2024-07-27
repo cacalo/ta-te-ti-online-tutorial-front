@@ -4,7 +4,7 @@
 </div>
 
 <app-modal-fullscreen [mostrar]="this.mostrarModal()">
-  @switch (this.salaService.estado()) {
+  @switch (estadoAnterior()) {
     @case ("ESPERANDO_COMPAÑERO") {
       <h2 primario>Esperando compañero</h2>
     }

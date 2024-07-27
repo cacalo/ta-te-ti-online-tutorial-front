@@ -35,7 +35,7 @@ export class JugarComponent implements OnInit {
       setTimeout(()=>{
         this.estadoAnterior.set(this.salaService.estado());
         this.estadoCambioHaceMucho = true;
-      },1000)}
+      },300)}
   },{allowSignalWrites:true});
   linkCopiado = signal<boolean>(false);
   estadoCambioHaceMucho = true;
@@ -45,7 +45,7 @@ export class JugarComponent implements OnInit {
     if(!this.esPrivada() && !this.id()){
       this.salaService.crearSala();
     } else if(this.id()) {
-      console.log("Intentando unirse a la sala",this.id())
+      //console.log("Intentando unirse a la sala",this.id())
       this.salaService.unirseASala(parseInt(this.id()!));
     } else {
       this.salaService.crearSala(true);

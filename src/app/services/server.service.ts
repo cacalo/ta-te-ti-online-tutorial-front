@@ -19,7 +19,7 @@ export class ServerService {
 
   constructor() {
     this.server.on("connect", ()=> {
-      console.log("Conectado al back")
+      //console.log("Conectado al back")
     });
     this.server.on("sala",(args)=> {
       this.actualizacionDeSala$.next(args)

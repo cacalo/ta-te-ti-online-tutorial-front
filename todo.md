@@ -1,13 +1,7 @@
-Revisar animación del modal con texto apareciendo tarde
-
-Crear tsc config con "npm run tsc -- --init"
-Declarar global.io con una definición en global.d.ts
-Cambiar el type a module en en el back y el "module": "NodeNext"
-eliminar console.logs
-
 Deploy
 Crear ambientes de dev y prod
 Hacer el fix de netlify en assets agregar "src/_redirects" y en el archivo agregar /* /index.html 200
+Cambiar el type a module en en el back y el "module": "NodeNext"
 
 
 
@@ -20,5 +14,9 @@ Poner animación al pie de modal
 Cambiar la url de display al entrar en sala privada
 Poner el alto del responsive en svh con un calc
 *Que en cambiar nombre aparezca el nombre actual por defecto
+Revisar animación del modal con texto apareciendo tarde
 
+Crear tsc config con "npm run tsc -- --init"
+Declarar global.io con una definición en global.d.ts
+eliminar console.logs
 
