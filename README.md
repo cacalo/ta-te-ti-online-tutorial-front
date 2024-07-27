@@ -1,5 +1,6 @@
 # Ta-Te-Ti-Online
 Este proyecto forma parte de un curso de desarrollo de aplicaciones con Angular, el cual [podés ver acá](https://www.youtube.com/playlist?list=PL3Qv7aeTNq0dyuTX0bAO5DVuFe8w93f0z).
+El resultado de todo este curso es [este juego online](https://master--ta-te-ti-online.netlify.app/).
 
 La versión de Angular original para el proyecto es la 18.0.2
 
